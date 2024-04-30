@@ -16,9 +16,9 @@ namespace BookWeb.Data
         {
 
             modelBuilder.Entity<Category>().HasData(
-                new Category { CatId=1, CatName="Drama", DispalyOrder="1"},
-                new Category { CatId = 2, CatName = "Action", DispalyOrder = "2" },
-                new Category { CatId = 3, CatName = "Sci-fi", DispalyOrder = "3" }
+                new Category { CatId=1, CatName="Drama", DisplayOrder="1"},
+                new Category { CatId = 2, CatName = "Action", DisplayOrder = "2" },
+                new Category { CatId = 3, CatName = "Sci-fi", DisplayOrder = "3" }
                 );
         }
     }

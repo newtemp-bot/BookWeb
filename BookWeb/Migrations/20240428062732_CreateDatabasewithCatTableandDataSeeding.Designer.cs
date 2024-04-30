@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookWeb.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240424172152_CreateDatabaseWithCategoryTable")]
-    partial class CreateDatabaseWithCategoryTable
+    [Migration("20240428062732_CreateDatabasewithCatTableandDataSeeding")]
+    partial class CreateDatabasewithCatTableandDataSeeding
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,21 +26,44 @@ namespace BookWeb.Migrations
 
             modelBuilder.Entity("BookWeb.Models.Category", b =>
                 {
-                    b.Property<string>("CatId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("CatId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CatId"));
 
                     b.Property<string>("CatName")
                         .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
-                    b.Property<string>("DispalyOrder")
+                    b.Property<string>("DisplayOrder")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("CatId");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            CatId = 1,
+                            CatName = "Drama",
+                            DisplayOrder = "1"
+                        },
+                        new
+                        {
+                            CatId = 2,
+                            CatName = "Action",
+                            DisplayOrder = "2"
+                        },
+                        new
+                        {
+                            CatId = 3,
+                            CatName = "Sci-fi",
+                            DisplayOrder = "3"
+                        });
                 });
 #pragma warning restore 612, 618
         }

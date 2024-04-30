@@ -11,7 +11,7 @@ namespace BookWeb.Models
         [MaxLength(30)]
         public string CatName { get; set; }
 
-        public string DispalyOrder { get; set; }
+        public string DisplayOrder { get; set; }
     }
 }
 

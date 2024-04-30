@@ -34,7 +34,7 @@ namespace BookWeb.Migrations
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
-                    b.Property<string>("DispalyOrder")
+                    b.Property<string>("DisplayOrder")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -47,19 +47,19 @@ namespace BookWeb.Migrations
                         {
                             CatId = 1,
                             CatName = "Drama",
-                            DispalyOrder = "1"
+                            DisplayOrder = "1"
                         },
                         new
                         {
                             CatId = 2,
                             CatName = "Action",
-                            DispalyOrder = "2"
+                            DisplayOrder = "2"
                         },
                         new
                         {
                             CatId = 3,
                             CatName = "Sci-fi",
-                            DispalyOrder = "3"
+                            DisplayOrder = "3"
                         });
                 });
 #pragma warning restore 612, 618
