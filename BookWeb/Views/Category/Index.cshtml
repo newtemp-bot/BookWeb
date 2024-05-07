@@ -28,7 +28,7 @@
                     <th>
                         Display Order
                     </th>
-                   @*  <th></th> *@
+                    <th></th>
                 </tr>
 
             </thead>
@@ -40,7 +40,7 @@
                         <td>
                             @obj.DisplayOrder
                         </td>
-                        @* <td>
+                        <td>
                             <div class="w-75 btn-group" role="group">
                                 <a asp-controller="Category" asp-action="Edit" asp-route-id="@obj.CatId" class="btn btn-primary mx-2">
                                     <i class="bi bi-pencil-square"></i> Edit
@@ -49,7 +49,7 @@
                                     <i class="bi bi-trash-fill"></i> Delete
                                 </a>
                             </div>
-                        </td> *@
+                        </td>
                     </tr>
                 }
             </tbody>
@@ -57,3 +57,8 @@
 
     </div>
 </div>
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"/>
+    }
+}

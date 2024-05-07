@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace BookWeb.Models
 {
@@ -9,8 +10,10 @@ namespace BookWeb.Models
 
         [Required]
         [MaxLength(30)]
+        [DisplayName("Category Name")]
         public string CatName { get; set; }
 
+        [Range(1, 100, ErrorMessage = "Display Order must be between 1-100")]
         public string DisplayOrder { get; set; }
     }
 }
