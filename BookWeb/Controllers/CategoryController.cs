@@ -34,6 +34,8 @@ namespace BookWeb.Controllers
             {
                 _db.Categories.Add(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Category created successfully";
+
                 return RedirectToAction("Index");
             }
             // If ModelState is not valid, return the view with validation errors
@@ -73,6 +75,10 @@ namespace BookWeb.Controllers
                
                 _db.Categories.Update(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Category Update successfully";
+
+
+
                 return RedirectToAction("Index");    
             }
             return View();
@@ -108,6 +114,8 @@ namespace BookWeb.Controllers
 
             _db.Categories.Remove(obj);
             _db.SaveChanges();
+            TempData["success"] = "Category Deleted successfully";
+
             return RedirectToAction("Index");
         }
 
