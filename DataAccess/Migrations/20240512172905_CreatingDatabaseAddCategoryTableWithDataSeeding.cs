@@ -4,10 +4,10 @@
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace BookWeb.Migrations
+namespace BookWeb.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class CreateDatabasewithCatTableandDataSeeding : Migration
+    public partial class CreatingDatabaseAddCategoryTableWithDataSeeding : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
