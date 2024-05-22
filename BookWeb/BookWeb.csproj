@@ -20,7 +20,6 @@
     <ProjectReference Include="..\Utility\BookWeb.Utility.csproj" />
     <ProjectReference Include="..\DataAccess\BookWeb.DataAccess.csproj" />
     <ProjectReference Include="..\Model\BookWeb.Models.csproj" />
- 
-  </ItemGroup>
+ </ItemGroup>
 
 </Project>
