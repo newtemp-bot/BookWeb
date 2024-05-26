@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BookWeb.Utility\BookWeb.Utility.csproj" />
+    <!--<ProjectReference Include="..\BookWeb.Utility\BookWeb.Utility.csproj" />-->
     <ProjectReference Include="..\Utility\BookWeb.Utility.csproj" />
   </ItemGroup>
 
