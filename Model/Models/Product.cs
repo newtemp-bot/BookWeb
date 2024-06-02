@@ -45,7 +45,6 @@ namespace BookWeb.Models.Models
 
         public int CatId { get; set; }
         [ForeignKey("CatId")]
-        [ValidateNever]
         public Category Category { get; set; }
         [ValidateNever]
 

@@ -51,7 +51,7 @@ namespace BookWeb.DataAccess.Data
                   Price = 30,
                   Price50 = 25,
                   Price100 = 20,
-                  CatId = 4,
+                  CatId = 3,
                   ImageUrl = ""
               },
               new Product
