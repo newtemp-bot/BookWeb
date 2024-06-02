@@ -19,7 +19,7 @@ namespace BookWeb.DataAccess.Data
         {
 
             modelBuilder.Entity<Category>().HasData(
-                new Category { CatId=1, CatName="Drama", DisplayOrder="1"},
+                new Category { CatId =1, CatName="Drama", DisplayOrder="1"},
                 new Category { CatId = 2, CatName = "Action", DisplayOrder = "2" },
                 new Category { CatId = 3, CatName = "Sci-fi", DisplayOrder = "3" }
                 );
@@ -36,7 +36,9 @@ namespace BookWeb.DataAccess.Data
                   Price = 90,
                   Price50 = 85,
                   Price100 = 80,
-                  CategoryId = 1
+                  CatId = 1,
+                  ImageUrl =""
+
               },
               new Product
               {
@@ -48,7 +50,9 @@ namespace BookWeb.DataAccess.Data
                   ListPrice = 40,
                   Price = 30,
                   Price50 = 25,
-                  Price100 = 20
+                  Price100 = 20,
+                  CatId = 4,
+                  ImageUrl = ""
               },
               new Product
               {
@@ -61,7 +65,8 @@ namespace BookWeb.DataAccess.Data
                   Price = 50,
                   Price50 = 40,
                   Price100 = 35,
-                  CategoryId = 1
+                  CatId = 1,
+                  ImageUrl = ""
               },
               new Product
               {
@@ -74,7 +79,8 @@ namespace BookWeb.DataAccess.Data
                   Price = 65,
                   Price50 = 60,
                   Price100 = 55,
-                  CategoryId = 2
+                  CatId = 2,
+                  ImageUrl = ""
               },
               new Product
               {
@@ -87,7 +93,8 @@ namespace BookWeb.DataAccess.Data
                   Price = 27,
                   Price50 = 25,
                   Price100 = 20,
-                  CategoryId = 3
+                  CatId = 3,
+                  ImageUrl = ""
               },
               new Product
               {
@@ -100,7 +107,8 @@ namespace BookWeb.DataAccess.Data
                   Price = 23,
                   Price50 = 22,
                   Price100 = 20,
-                  CategoryId = 3
+                  CatId = 3,
+                  ImageUrl = ""
               }
               );
         }
