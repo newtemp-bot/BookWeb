@@ -3,6 +3,7 @@ using BookWeb.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookWeb.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240603173027_AddCompany")]
+    partial class AddCompany
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -63,7 +66,7 @@ namespace BookWeb.DataAccess.Migrations
                         });
                 });
 
-            modelBuilder.Entity("BookWeb.Models.Company", b =>
+            modelBuilder.Entity("BookWeb.Models.Models.Company", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -127,7 +130,7 @@ namespace BookWeb.DataAccess.Migrations
                         });
                 });
 
-            modelBuilder.Entity("BookWeb.Models.Product", b =>
+            modelBuilder.Entity("BookWeb.Models.Models.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -263,7 +266,7 @@ namespace BookWeb.DataAccess.Migrations
                         });
                 });
 
-            modelBuilder.Entity("BookWeb.Models.Product", b =>
+            modelBuilder.Entity("BookWeb.Models.Models.Product", b =>
                 {
                     b.HasOne("BookWeb.Models.Category", "Category")
                         .WithMany()

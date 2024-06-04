@@ -1,5 +1,4 @@
 ﻿using BookWeb.Models;
-using BookWeb.Models.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookWeb.DataAccess.Data
@@ -10,16 +9,18 @@ namespace BookWeb.DataAccess.Data
         {
 
         }
-         
-        public DbSet<Category>? Categories { get; set; }
+
+        public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
+
+        public DbSet<Company> Companies { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
             modelBuilder.Entity<Category>().HasData(
-                new Category { CatId =1, CatName="Drama", DisplayOrder="1"},
+                new Category { CatId = 1, CatName = "Drama", DisplayOrder = "1" },
                 new Category { CatId = 2, CatName = "Action", DisplayOrder = "2" },
                 new Category { CatId = 3, CatName = "Sci-fi", DisplayOrder = "3" }
                 );
@@ -37,7 +38,7 @@ namespace BookWeb.DataAccess.Data
                   Price50 = 85,
                   Price100 = 80,
                   CatId = 1,
-                  ImageUrl =""
+                  ImageUrl = ""
 
               },
               new Product
@@ -101,7 +102,7 @@ namespace BookWeb.DataAccess.Data
                   Id = 6,
                   Title = "Leaves and Wonders",
                   Author = "Laura Phantom",
-                  Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
+                  Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae 'euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                   ISBN = "FOT000000001",
                   ListPrice = 25,
                   Price = 23,
@@ -111,6 +112,13 @@ namespace BookWeb.DataAccess.Data
                   ImageUrl = ""
               }
               );
+
+
+            modelBuilder.Entity<Company>().HasData(
+               new Company { Id = 1, Name = "BookCom1", StreetAddress = "ABC", city = "Surat", state = "Gujarat", Postalcode = "1234560", PhoneNumber = "123456789" },
+               new Company { Id = 2, Name = "BookCom2", StreetAddress = "DEF", city = "Pune", state = "MH", Postalcode = "1234560", PhoneNumber = "123456789" },
+               new Company { Id = 3, Name = "BookCom3", StreetAddress = "IJK", city = "Jaipur", state = "RJ", Postalcode = "1234560", PhoneNumber = "123456789" }
+               );
         }
     }
 }

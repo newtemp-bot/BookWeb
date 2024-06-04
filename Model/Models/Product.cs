@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 
-namespace BookWeb.Models.Models
+namespace BookWeb.Models
 {
     public class Product
     {
@@ -45,9 +45,12 @@ namespace BookWeb.Models.Models
 
         public int CatId { get; set; }
         [ForeignKey("CatId")]
-        public Category Category { get; set; }
-        [ValidateNever]
 
+        [ValidateNever]
+        public Category Category { get; set; }
+
+
+        [ValidateNever]
         public string ImageUrl { get; set; }
         
     }

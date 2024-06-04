@@ -1,4 +1,4 @@
-﻿using BookWeb.Models.Models;
+﻿using BookWeb.Models;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;

@@ -1,6 +1,6 @@
 ﻿using BookWeb.DataAccess.Data;
 using BookWeb.DataAccess.Repository.IRepository;
-using BookWeb.Models.Models;
+using BookWeb.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
