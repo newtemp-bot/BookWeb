@@ -23,11 +23,11 @@ namespace BookWeb.DataAccess.Migrations
 
             modelBuilder.Entity("BookWeb.Models.Category", b =>
                 {
-                    b.Property<int>("CatId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CatId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("CatName")
                         .IsRequired()
@@ -38,26 +38,26 @@ namespace BookWeb.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("CatId");
+                    b.HasKey("Id");
 
                     b.ToTable("Categories");
 
                     b.HasData(
                         new
                         {
-                            CatId = 1,
+                            Id = 1,
                             CatName = "Drama",
                             DisplayOrder = "1"
                         },
                         new
                         {
-                            CatId = 2,
+                            Id = 2,
                             CatName = "Action",
                             DisplayOrder = "2"
                         },
                         new
                         {
-                            CatId = 3,
+                            Id = 3,
                             CatName = "Sci-fi",
                             DisplayOrder = "3"
                         });
@@ -139,7 +139,7 @@ namespace BookWeb.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CatId")
+                    b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
@@ -172,7 +172,7 @@ namespace BookWeb.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CatId");
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
 
@@ -181,7 +181,7 @@ namespace BookWeb.DataAccess.Migrations
                         {
                             Id = 1,
                             Author = "Billy Spark",
-                            CatId = 1,
+                            CategoryId = 1,
                             Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "SWD9999001",
                             ImageUrl = "",
@@ -195,7 +195,7 @@ namespace BookWeb.DataAccess.Migrations
                         {
                             Id = 2,
                             Author = "Nancy Hoover",
-                            CatId = 3,
+                            CategoryId = 3,
                             Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "CAW777777701",
                             ImageUrl = "",
@@ -209,7 +209,7 @@ namespace BookWeb.DataAccess.Migrations
                         {
                             Id = 3,
                             Author = "Julian Button",
-                            CatId = 1,
+                            CategoryId = 1,
                             Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "RITO5555501",
                             ImageUrl = "",
@@ -223,7 +223,7 @@ namespace BookWeb.DataAccess.Migrations
                         {
                             Id = 4,
                             Author = "Abby Muscles",
-                            CatId = 2,
+                            CategoryId = 2,
                             Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "WS3333333301",
                             ImageUrl = "",
@@ -237,7 +237,7 @@ namespace BookWeb.DataAccess.Migrations
                         {
                             Id = 5,
                             Author = "Ron Parker",
-                            CatId = 3,
+                            CategoryId = 3,
                             Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "SOTJ1111111101",
                             ImageUrl = "",
@@ -251,7 +251,7 @@ namespace BookWeb.DataAccess.Migrations
                         {
                             Id = 6,
                             Author = "Laura Phantom",
-                            CatId = 3,
+                            CategoryId = 3,
                             Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae 'euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "FOT000000001",
                             ImageUrl = "",
@@ -267,7 +267,7 @@ namespace BookWeb.DataAccess.Migrations
                 {
                     b.HasOne("BookWeb.Models.Category", "Category")
                         .WithMany()
-                        .HasForeignKey("CatId")
+                        .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

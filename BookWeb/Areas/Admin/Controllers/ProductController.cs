@@ -24,7 +24,7 @@ namespace BookWeb.Areas.Admin.Controllers
             List<Product> objProductList = _unitOfWork.Product.GetAll(includeProperties: "Category").ToList();
 
             IEnumerable<SelectListItem> CategoryList = _unitOfWork.Category.GetAll().Select(u => new SelectListItem
-            { Text = u.CatName, Value = u.CatId.ToString() });
+            { Text = u.CatName, Value = u.Id.ToString() });
 
 
             return View(objProductList);
@@ -36,7 +36,7 @@ namespace BookWeb.Areas.Admin.Controllers
                 CategoryList = _unitOfWork.Category.GetAll().Select(u => new SelectListItem
                 {
                     Text = u.CatName,
-                    Value = u.CatId.ToString()
+                    Value = u.Id.ToString()
                 }),
                 Product = new Product()
             };
@@ -103,7 +103,7 @@ namespace BookWeb.Areas.Admin.Controllers
                 productVM.CategoryList = _unitOfWork.Category.GetAll().Select(u => new SelectListItem
                 {
                     Text = u.CatName,
-                    Value = u.CatId.ToString()
+                    Value = u.Id.ToString()
                 });
                 return View(productVM);
             }

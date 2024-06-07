@@ -56,7 +56,7 @@ namespace BookWeb.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            Category? categoryFromDb = _unitOfWork.Category.Get(u => u.CatId == id);
+            Category? categoryFromDb = _unitOfWork.Category.Get(u => u.Id == id);
             //Category? categoryFromDb = _categoryRepo.Get(u => u.CatId == id);
             // Category? categoryFromDb = _db.Categories.Find(id);
             //Category? categoryFromDb1 = _db.Categories.FirstOrDefault(u => u.CatId == id);
@@ -103,7 +103,7 @@ namespace BookWeb.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            Category? categoryFromDb = _unitOfWork.Category.Get(u => u.CatId == id);
+            Category? categoryFromDb = _unitOfWork.Category.Get(u => u.Id == id);
             //Category? categoryFromDb = _categoryRepo.Get(u => u.CatId == id);
             // Category? categoryFromDb = _db.Categories.Find(id);
             //Category? categoryFromDb1 = _db.Categories.FirstOrDefault(u => u.CatId == id);
@@ -119,7 +119,7 @@ namespace BookWeb.Areas.Admin.Controllers
         [HttpPost, ActionName("Delete")]
         public IActionResult DeletePOST(int? id)
         {
-            Category? obj = _unitOfWork.Category.Get(u => u.CatId == id);
+            Category? obj = _unitOfWork.Category.Get(u => u.Id == id);
             // Category? obj = _categoryRepo.Get(u => u.CatId == id);
             if (obj == null)
             {

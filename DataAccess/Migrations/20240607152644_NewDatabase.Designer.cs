@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookWeb.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240603165321_NewDatabase")]
+    [Migration("20240607152644_NewDatabase")]
     partial class NewDatabase
     {
         /// <inheritdoc />
@@ -26,11 +26,11 @@ namespace BookWeb.DataAccess.Migrations
 
             modelBuilder.Entity("BookWeb.Models.Category", b =>
                 {
-                    b.Property<int>("CatId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CatId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("CatName")
                         .IsRequired()
@@ -41,32 +41,96 @@ namespace BookWeb.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("CatId");
+                    b.HasKey("Id");
 
                     b.ToTable("Categories");
 
                     b.HasData(
                         new
                         {
-                            CatId = 1,
+                            Id = 1,
                             CatName = "Drama",
                             DisplayOrder = "1"
                         },
                         new
                         {
-                            CatId = 2,
+                            Id = 2,
                             CatName = "Action",
                             DisplayOrder = "2"
                         },
                         new
                         {
-                            CatId = 3,
+                            Id = 3,
                             CatName = "Sci-fi",
                             DisplayOrder = "3"
                         });
                 });
 
-            modelBuilder.Entity("BookWeb.Models.Models.Product", b =>
+            modelBuilder.Entity("BookWeb.Models.Company", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Postalcode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StreetAddress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("city")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("state")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Companies");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "BookCom1",
+                            PhoneNumber = "123456789",
+                            Postalcode = "1234560",
+                            StreetAddress = "ABC",
+                            city = "Surat",
+                            state = "Gujarat"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "BookCom2",
+                            PhoneNumber = "123456789",
+                            Postalcode = "1234560",
+                            StreetAddress = "DEF",
+                            city = "Pune",
+                            state = "MH"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "BookCom3",
+                            PhoneNumber = "123456789",
+                            Postalcode = "1234560",
+                            StreetAddress = "IJK",
+                            city = "Jaipur",
+                            state = "RJ"
+                        });
+                });
+
+            modelBuilder.Entity("BookWeb.Models.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -78,7 +142,7 @@ namespace BookWeb.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CatId")
+                    b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
@@ -111,7 +175,7 @@ namespace BookWeb.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CatId");
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
 
@@ -120,7 +184,7 @@ namespace BookWeb.DataAccess.Migrations
                         {
                             Id = 1,
                             Author = "Billy Spark",
-                            CatId = 1,
+                            CategoryId = 1,
                             Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "SWD9999001",
                             ImageUrl = "",
@@ -134,7 +198,7 @@ namespace BookWeb.DataAccess.Migrations
                         {
                             Id = 2,
                             Author = "Nancy Hoover",
-                            CatId = 3,
+                            CategoryId = 3,
                             Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "CAW777777701",
                             ImageUrl = "",
@@ -148,7 +212,7 @@ namespace BookWeb.DataAccess.Migrations
                         {
                             Id = 3,
                             Author = "Julian Button",
-                            CatId = 1,
+                            CategoryId = 1,
                             Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "RITO5555501",
                             ImageUrl = "",
@@ -162,7 +226,7 @@ namespace BookWeb.DataAccess.Migrations
                         {
                             Id = 4,
                             Author = "Abby Muscles",
-                            CatId = 2,
+                            CategoryId = 2,
                             Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "WS3333333301",
                             ImageUrl = "",
@@ -176,7 +240,7 @@ namespace BookWeb.DataAccess.Migrations
                         {
                             Id = 5,
                             Author = "Ron Parker",
-                            CatId = 3,
+                            CategoryId = 3,
                             Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "SOTJ1111111101",
                             ImageUrl = "",
@@ -190,8 +254,8 @@ namespace BookWeb.DataAccess.Migrations
                         {
                             Id = 6,
                             Author = "Laura Phantom",
-                            CatId = 3,
-                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
+                            CategoryId = 3,
+                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae 'euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "FOT000000001",
                             ImageUrl = "",
                             ListPrice = 25.0,
@@ -202,11 +266,11 @@ namespace BookWeb.DataAccess.Migrations
                         });
                 });
 
-            modelBuilder.Entity("BookWeb.Models.Models.Product", b =>
+            modelBuilder.Entity("BookWeb.Models.Product", b =>
                 {
                     b.HasOne("BookWeb.Models.Category", "Category")
                         .WithMany()
-                        .HasForeignKey("CatId")
+                        .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

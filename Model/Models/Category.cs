@@ -6,7 +6,7 @@ namespace BookWeb.Models
     public class Category
     {
         [Key]
-        public int CatId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [MaxLength(30)]

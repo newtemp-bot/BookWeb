@@ -30,7 +30,7 @@ namespace BookWeb.DataAccess.Repository
                 objFromDb.ListPrice = obj.ListPrice;
                 objFromDb.Price100 = obj.Price100;
                 objFromDb.Description = obj.Description;
-                objFromDb.CatId = obj.CatId;
+                objFromDb.CategoryId = obj.CategoryId;
                 objFromDb.Author = obj.Author;
                 if (obj.ImageUrl != null)
                 {

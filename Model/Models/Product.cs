@@ -43,9 +43,8 @@ namespace BookWeb.Models
         [Range(1, 1000)]
         public double Price100 { get; set; }
 
-        public int CatId { get; set; }
-        [ForeignKey("CatId")]
-
+        public int CategoryId { get; set; }
+        [ForeignKey("CategoryId")]
         [ValidateNever]
         public Category Category { get; set; }
 

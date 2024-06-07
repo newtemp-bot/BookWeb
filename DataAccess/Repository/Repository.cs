@@ -1,5 +1,5 @@
 ﻿using BookWeb.DataAccess.Data;
-using BookWeb.DataAccess.Migrations;
+
 using BookWeb.DataAccess.Repository.IRepository;
 using System;
 using System.Collections.Generic;
@@ -20,7 +20,7 @@ namespace BookWeb.DataAccess.Repository
             _db = db;
             this.dbSet = _db.Set<T>();
             //_db.Categories == dbSet
-            _db.Products.Include(u => u.Category).Include(u => u.CatId);
+            _db.Products.Include(u => u.Category).Include(u => u.CategoryId);
 
         }
 
