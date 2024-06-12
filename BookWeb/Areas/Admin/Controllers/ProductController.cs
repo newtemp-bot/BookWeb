@@ -1,5 +1,5 @@
 ﻿using BookWeb.Models;
-using BookWeb.DataAccess.Repository.IRepository;
+using BookWeb.DataAccess.Repository.IRepository;  
 using BookWeb.DataAccess.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -17,6 +17,8 @@ namespace BookWeb.Areas.Admin.Controllers
         public ProductController(IUnitOfWork unitOfWork, IWebHostEnvironment webHostEnvironment)
         {
             _unitOfWork = unitOfWork;
+
+            _webHostEnvironment=webHostEnvironment;
         }
         public IActionResult Index()
         {
