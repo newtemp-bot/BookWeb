@@ -7,7 +7,7 @@
 namespace BookWeb.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class NewDatabase : Migration
+    public partial class CreateDatabase : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
