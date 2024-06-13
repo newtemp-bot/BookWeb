@@ -10,11 +10,9 @@
     <Content Remove="Areas\Admin\Views\Product\Create.cshtml" />
     <Content Remove="Areas\Admin\Views\Product\Delete.cshtml" />
     <Content Remove="Areas\Admin\Views\Product\Edit.cshtml" />
-    <Content Remove="Areas\Admin\Views\Product\Upsert.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Areas\Admin\Views\Product\Upsert.cshtml" />
     <None Include="Areas\Admin\Views\Product\Index.cshtml" />
   </ItemGroup>
 
