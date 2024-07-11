@@ -67,7 +67,7 @@ namespace BookWeb.Areas.Admin.Controllers
                 if (file != null)
                 {
                     string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
-                    string productPath = Path.Combine(wwwRootPath, @"images\");
+                    string productPath = Path.Combine(wwwRootPath, @"images\product\");
 
                     if (!string.IsNullOrEmpty(productVM.Product.ImageUrl))
                     {
@@ -88,7 +88,7 @@ namespace BookWeb.Areas.Admin.Controllers
                         file.CopyTo(fileStream);
                     }
 
-                    productVM.Product.ImageUrl = @"\images\" + fileName;
+                    productVM.Product.ImageUrl = @"\images\product\" + fileName;
                 }
 
                 if (productVM.Product.Id == 0)

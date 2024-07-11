@@ -10,6 +10,15 @@
     <Content Remove="Areas\Admin\Views\Product\Create.cshtml" />
     <Content Remove="Areas\Admin\Views\Product\Delete.cshtml" />
     <Content Remove="Areas\Admin\Views\Product\Edit.cshtml" />
+    <Content Remove="wwwroot\images\product\1d938f5a-8c6f-4f2c-8597-934cce134fee.jpg" />
+    <Content Remove="wwwroot\images\product\1d96fd86-e25b-450b-a8a0-8e51faf4b370.jpg" />
+    <Content Remove="wwwroot\images\product\4d31f608-c45a-45f2-8558-e5e72a97db6d.png" />
+    <Content Remove="wwwroot\images\product\60bfec20-03b2-40cc-b12c-ba09ed5d9a85.png" />
+    <Content Remove="wwwroot\images\product\65ade59d-af79-4b23-97ea-b0c2e6bebced.png" />
+    <Content Remove="wwwroot\images\product\6734fa18-26bc-4de5-94f1-49e2d5295ba1.jpg" />
+    <Content Remove="wwwroot\images\product\85a116df-b6e6-49f4-8691-d2c22ed9b853.jpg" />
+    <Content Remove="wwwroot\images\product\acbcf1e8-6ae2-4305-b189-857e240fc057.png" />
+    <Content Remove="wwwroot\images\product\d1f1e1fe-dc16-464d-9de5-2f83c2fd5ab3.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -44,6 +53,7 @@
 
   <ItemGroup>
     <Folder Include="Areas\Identity\Data\" />
+    <Folder Include="wwwroot\images\product\" />
   </ItemGroup>
 
   <ItemGroup>
